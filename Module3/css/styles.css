@@ -38,6 +38,11 @@ body {
 .navbar-header button.navbar-toggle, .navbar-header .icon-bar {
   border: 1px solid black;
 }
+#nav-list{
+  margin-top: 0;
+  margin-bottom: 0;
+  background-color: white;
+}
 
 h2{
   margin-top: 0;
