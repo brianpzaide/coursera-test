@@ -37,7 +37,7 @@ function LunchCheckController($scope) {
     $scope.MyMessage = "Please enter data first";
     $scope.m_State = "r"
   }
-  else {
+  if(lchars.length > 0 && lchars.length <=3) {
     $scope.Mychars = lchars;
     $scope.MyMessage = "Enjoy!";
     $scope.m_State = "g"
