@@ -1,0 +1,18 @@
+.g {
+	color: green;
+}
+
+
+.r {
+	color: red;
+}
+
+#lunch-menu.g{
+	margin: : 2px;
+	border-color: green;
+}
+
+#lunch-menu.r{
+	margin: 2px;
+	border-color: red;
+}
