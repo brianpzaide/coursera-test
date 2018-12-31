@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app='ShoppingListApp'>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style></style>
+
+    <title>Shopping List Check Off</title>
+  </head>
+  <body>
+    <h1>Shopping List Check Off</h1>
+    <div ng-controller='ToBuyController as itemAdder'>
+      <input type="text" ng-model="itemAdder.itemName"
+      placeholder="item name">
+      <input type="text" ng-model="itemAdder.itemQuantity"
+      placeholder="quantity">
+      <button ng-click="itemAdder.addItem();">
+        Add Item To Shopping List</button>
+    </div>
+
+    <div class='container'>
+      <div class="col-lg-6 col-md-6 col-xs-6"  ng-controller='ToBuyController as showBuyList'>
+        <h3>To Buy:</h3>
+        <ol>
+          <li ng-repeat="item in showBuyList.itemsToBuy">
+            {{ item.quantity }} of {{ item.name }}
+            <button class="btn btn-default" ng-click="showBuyList.buyItem($index);">
+              <span class="glyphicon glyphicon-ok"></span> Buy Item
+            </button>
+          </li>
+        </ol>
+        <div ng-if= "showBuyList.empty(showBuyList.itemsToBuy)">"Everything is bought!"</div>
+      <!-- <div ng-show="list.errorMessage" class="error">Error: {{list.errorMessage}}</div> -->
+      <!-- <div ng-hide="!showList.itemsToBuy.empty">{{showList.a}}</div> -->
+      </div>
+      <div class="col-lg-6 col-md-6 col-xs-6" ng-controller='AlreadyBoughtController as showAlreadyBoughtList'>
+        <h3>Already Bought:</h3>
+        <ol>
+          <li ng-repeat="item in showAlreadyBoughtList.itemsBought">
+            {{ item.quantity }} of {{ item.name }}
+          </li>
+        </ol>
+         <div ng-if= "showAlreadyBoughtList.empty(showAlreadyBoughtList.itemsBought)">"Nothing bought yet."</div>
+      <!-- <div ng-show="list.errorMessage" class="error">Error: {{list.errorMessage}}</div> -->
+      <!--<div ng-hide="!showList.itemsBought.empty">{{showList.b}}</div> -->
+      </div>
+    </div>
+  </body>
+</html>
