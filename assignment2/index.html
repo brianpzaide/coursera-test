@@ -5,7 +5,11 @@
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
     <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <style></style>
+    <style>
+    .m_Error{
+      color: red
+    }
+    </style>
 
     <title>Shopping List Check Off</title>
   </head>
@@ -31,7 +35,7 @@
             </button>
           </li>
         </ol>
-        <div ng-if= "showBuyList.empty(showBuyList.itemsToBuy)">"Everything is bought!"</div>
+        <div ng-if= "showBuyList.itemsToBuy.length ===0" class="m_Error" >Everything is bought!</div>
       <!-- <div ng-show="list.errorMessage" class="error">Error: {{list.errorMessage}}</div> -->
       <!-- <div ng-hide="!showList.itemsToBuy.empty">{{showList.a}}</div> -->
       </div>
@@ -42,7 +46,7 @@
             {{ item.quantity }} of {{ item.name }}
           </li>
         </ol>
-         <div ng-if= "showAlreadyBoughtList.empty(showAlreadyBoughtList.itemsBought)">"Nothing bought yet."</div>
+         <div ng-if= "showAlreadyBoughtList.itemsBought.length === 0" class = "m_Error">Nothing bought yet.</div>
       <!-- <div ng-show="list.errorMessage" class="error">Error: {{list.errorMessage}}</div> -->
       <!--<div ng-hide="!showList.itemsBought.empty">{{showList.b}}</div> -->
       </div>
