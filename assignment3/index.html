@@ -1,0 +1,11 @@
+<div class='container'>
+  <div class="col-lg-6 col-md-6 col-xs-6 m_L" ng-repeat="item in dir_menu.found">
+    <div class="col-lg-6 col-md-6 col-xs-6">
+      <h4>{{item.name}}</h4>
+      {{item.description}}<br>
+      large : {{item.price_large}} <br>
+      small : {{item.price_small}} <br>
+    </div>
+    <button class="btn btn-primary col-lg-6 col-md-6 col-xs-6" ng-click="dir_menu.onRemove({index: $index});">Don't want this one!</button>
+</div>
+<div class="m_Error", ng-if="dir_menu.emptyList()">Nothing found</div>
