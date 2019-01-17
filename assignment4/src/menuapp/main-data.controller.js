@@ -1,7 +1,7 @@
 (function () {
 'use strict';
 
-angular.module('DataList')
+angular.module('MenuApp')
 .controller('MainDataListController', MainDataListController);
 
 
