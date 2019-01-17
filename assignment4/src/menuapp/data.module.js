@@ -1,6 +1,6 @@
 (function () {
 'use strict';
 
-angular.module('DataList', ['ui.router']);
+angular.module('Data', ['ui.router']);
 
 })();

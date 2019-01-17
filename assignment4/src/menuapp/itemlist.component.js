@@ -1,7 +1,7 @@
 (function () {
 'use strict';
 
-angular.module('DataList')
+angular.module('Data')
 .component('myitemList', {
   templateUrl: 'src/menuapp/templates/itemlist.template.html',
   bindings: {
