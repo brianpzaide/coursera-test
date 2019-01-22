@@ -52,4 +52,5 @@
           ng-disabled="regForm.$invalid"
           ng-click="reg.submit(reg.user.favItem)">Submit</button>
       </form>
+      <div ng-if="reg.user.completed" ui-sref="public.MyInfo">Your info has been saved</div> 
     </fieldset>
