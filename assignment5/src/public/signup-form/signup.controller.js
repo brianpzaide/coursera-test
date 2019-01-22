@@ -13,11 +13,13 @@ function SignUpController(MenuService) {
       reg.user.FavoriteItem = response;
       //console.log(reg.user.FavoriteItem);
       reg.user.completed = true;
+      reg.err = false;
       MenuService.user = reg.user;
     })
    .catch(function (error) {
      MenuService.user = {};
      reg.user.completed = false;
+     reg.err = true;
      console.log("Something went terribly wrong.");
    });
  }
